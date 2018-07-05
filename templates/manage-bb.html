@@ -1,0 +1,59 @@
+{% extends 'manage.html' %}
+{% block title %}管理书籍{% endblock %}
+{% block content %}
+    <div style="float: right;width: 80%;">
+        <div style="width: 80%;height: 50px;margin: 0 auto;">
+            <div style="float: left;width: 200px;margin-top: 10px;">
+                <img src="/static/images/logo.PNG" style="width: 120px;height: 40px"/>
+            </div>
+            <div style="float: right;width: 400px;margin-top: 10px;">
+                <form>
+                    <input style="width: 300px" type="text" class="input input-auto" name="keywords" size="15"
+                           placeholder="关键词"/>
+                    <input type="submit" name="search" value="搜索" class="button"/>
+                </form>
+            </div>
+        </div>
+
+        <div style="margin: 0 auto;width: 90%;height: 50px">
+            <div style="border-top: 2px solid #3505ff;height: 30px;margin-top: 10px;">
+                <span>关键字</span>
+            </div>
+        </div>
+        <div style="margin: 0 auto;width: 90%;height: auto">
+            <div style="border-top: 2px solid #3505ff;height: 500px;margin-top: 10px;">
+                <table class="table table-striped">
+                    <tr>
+                        <th>用户ID</th>
+                        <th>图书ID</th>
+                        <th>借书时间</th>
+                        <th>时长</th>
+                        <th>操作</th>
+                    </tr>
+                    {% for bb in bbs %}
+                        <tr>
+                            <td>{{ bb.u_id }}</td>
+                            <td>{{ bb.b_id }}</td>
+                            <td>{{ bb.date_start }}</td>
+                            <td>{{ bb.date_len }}</td>
+                            <td><a onclick="delTip();" href="/app/delete-bb/?bid={{ bb.b_id }}&uid={{ bb.u_id }}" class="button button-small border-red">
+                                    <span class="icon-trash-o"></span>删除</a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        <div style="text-align: center;margin-top: 25px;">{{ page_str }}</div>
+    </div>
+    <script src="/static/js/jquery-1.12.4.js"></script>
+    <script>
+        function delTip() {
+            if(confirm("确定删除?")){
+                return true;
+            }else{
+                return false;
+            }
+
+        }
+    </script>
+{% endblock %}

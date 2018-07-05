@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/pintuer.css">
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/pintuer.js"></script>
+
+    <meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="/static/edit/css/style.css" />
+	<script type="text/javascript" src="/static/edit/lib/jquery-1.7.min.js"></script>
+	<link rel="stylesheet" href="/static/edit/redactor/css/redactor.css" />
+	<script src="/static/edit/redactor/redactor.js"></script>
+	<script>
+	    $(document).ready(
+		    function()
+		    {
+			    $('#redactor_content').redactor();
+		    }
+	    );
+        $(function(){
+	        $("#editor-zh").markdown({language:'zh'})
+        })
+	</script>
+
+</head>
+<body>
+{#头部#}
+{% include 'all_head.html' %}
+<div style="width: 90%;height: 500px;margin: 0 auto;">
+    {#内容左#}
+    {% include 'manage_left.html' %}
+    {#内容右#}
+    {% block content %}
+    {% endblock %}
+</div>
+
+</body>
+</html>

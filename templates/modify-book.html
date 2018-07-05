@@ -1,0 +1,74 @@
+{% extends 'insert.html' %}
+{% block title %}修改图书{% endblock %}
+{% block content %}
+    <div style="float: right;width: 80%;">
+        <div style="margin-top: 10px;margin-left: 10px;">
+            <form method="post" action="/app/modify-book/" enctype="multipart/form-data">
+                <div class="form-group">
+                    <div class="label">
+                        <label for="sno">图书ID</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" id="bid" readonly="readonly" name="bid" size="50" value ='{{ bid }}'
+                               data-validate="required:必填,number:必须是数字,length#==6:数值必须是6位"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label for="sname">图书名</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" id="bname" name="bname" size="50" value='{{ bname }}'
+                               data-validate="required:必填"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label for="sname">价格</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" id="bprice" name="bprice" size="50" value='{{ bprice }}'
+                               data-validate="required:必填,number:必须是数字"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label for="sname">库存</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" id="bstock" name="bstock" size="50" value='{{ bstock }}'
+                               data-validate="required:必填,number:必须是数字"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label for="sdept">种类</label>
+                        <div class="field">
+                            <select class="input" name="bfamily">
+                                {% for item in family %}
+                                    {% if item == bfamily %}
+                                        <option selected>{{ item }}</option>
+                                    {% else %}
+                                        <option>{{ item }}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label for="photo">封面</label>
+                    </div>
+                    <div class="field">
+                        <a class="button input-file" href="javascript:void(0);">+ 浏览文件<input size="100" type="file"
+                                   id="bpic" name="bpic" data-validate="required:必填,regexp#.+.(jpg|jpeg|png|gif)$:只能上传jpg|gif|png格式文件"/></a>
+                    </div>
+                </div>
+                <div class="form-button">
+                    <button class="button" type="submit">提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

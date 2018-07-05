@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/pintuer.css">
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/pintuer.js"></script>
+</head>
+<body>
+{#头部#}
+{% include 'all_head.html' %}
+<div style="width: 90%;height: 500px;margin: 0 auto;">
+    {#内容左#}
+    {% include 'manage_left.html' %}
+    {# 内容右#}
+    {% block content %}
+    {% endblock %}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+{% extends 'insert.html' %}
+{% block title %}插入用户{% endblock %}
+{% block content %}
+    <div style="float: right;width: 80%;">
+        <div style="margin-top: 10px;margin-left: 10px;">
+            <form method="post" action="/app/insert-user/" enctype="multipart/form-data">
+                <div class="form-group">
+                    <div class="label">
+                        <label for="sno">用户ID</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" id="uid" name="uid" size="50" placeholder="用户ID"
+                               data-validate="required:必填,number:必须是数字,length#==9:数值必须是9位,ajax#/app/Checkuid?uid=:ID已存在"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label for="sname">用户名</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" id="uname" name="uname" size="50" placeholder="用户名"
+                               data-validate="required:必填"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label for="sname">密码</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" id="upwd" name="upwd" size="50" placeholder="用户密码"
+                               data-validate="required:必填"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label for="sname">电话</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" id="utel" name="utel" size="50" placeholder="电话"
+                               data-validate="required:必填,number:必须是数字,length#==11:数值必须是11位"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label for="sdept">角色</label>
+                        <div class="field">
+                            <select class="input" name="urole">
+                                {% for item in role %}
+                                    <option>{{ item }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label for="photo">头像</label>
+                    </div>
+                    <div class="field">
+                        <a class="button input-file" href="javascript:void(0);">+ 浏览文件<input size="100" type="file"
+                                   id="upic" name="upic" data-validate="required:必填,regexp#.+.(jpg|jpeg|png|gif)$:只能上传jpg|gif|png格式文件"/></a>
+                    </div>
+                </div>
+                <div class="form-button">
+                    <button class="button" type="submit">提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="/static/css/pintuer.css">
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/pintuer.js"></script>
+</head>
+<body>
+    <div align="center">
+	<form action="/app/register/" method="post" enctype="multipart/form-data">
+		<div class="panel padding" style="width: 450px;text-align: left;">
+			<div class="text-center">
+				<br>
+				<h2><strong>欢迎使用&nbsp;</strong></h2></div>
+			<div class="" style="padding:30px;">
+				<div class="form-group">
+                    <div class="label">
+                        <label for="sno">用户ID</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" id="uid" name="uid" size="50" placeholder="用户ID"
+                               data-validate="required:必填,number:必须是数字,length#==9:数值必须是9位,ajax#/app/Checkuid?uid=:ID已存在"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label for="sname">用户名</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" id="uname" name="uname" size="50" placeholder="用户名"
+                               data-validate="required:必填"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label for="sname">密码</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" id="upwd" name="upwd" size="50" placeholder="用户密码"
+                               data-validate="required:必填"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label for="sname">电话</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" id="utel" name="utel" size="50" placeholder="电话"
+                               data-validate="required:必填,number:必须是数字,length#==11:数值必须是11位"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label for="photo">头像</label>
+                    </div>
+                    <div class="field">
+                        <a class="button input-file" href="javascript:void(0);">+ 浏览文件<input size="100" type="file"
+                                   id="upic" name="upic" data-validate="required:必填,regexp#.+.(jpg|jpeg|png|gif)$:只能上传jpg|gif|png格式文件"/></a>
+                    </div>
+                </div>
+				<div class="form-group">
+					<div class="field">
+						<button type="submit" class="button button-block bg-main text-big">立即注册</button>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="field text-center">
+						<p class="text-muted text-center"> <a class="" href="/app/login/">已有帐号，去登录</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+</body>
+</html>

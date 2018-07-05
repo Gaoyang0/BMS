@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>图书管理系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/pintuer.css">
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/pintuer.js"></script>
+    <style>
+        .zan, .cai{
+            position: relative;
+            width: 30px;
+        }
+    </style>
+
+</head>
+<body>
+{# 头部#}
+{% include 'all_head.html' %}
+{# 内容#}
+<div style="width: 90%;height: 500px;margin: 0 auto;">
+    {# 内容左#}
+    <div style="float: left;width: 20%;margin-top: 10px">
+        <div style="height: 200px;">
+            <button class="button icon-navicon" data-target="#nav-main1">
+            </button>
+            <ul class="nav nav-main nav-navicon" id="nav-main1">
+                <li class="nav-head"><span>推荐</span></li>
+                <li><a href="/app/recommend/"><span>最火图书</span></a></li>
+                <li><a href="/app/recommend/"><span>最多点赞</span></a></li>
+                <li><a href="/app/recommend/"><span>吐血推荐</span></a></li>
+                <li><a href="/app/recommend/"><span>热门新书</span></a></li>
+            </ul>
+            <button class="button icon-navicon" data-target="#nav-main2">
+            </button>
+
+        </div>
+        <div>
+            <div style="height: 200px;">
+                <div style="height: 30px;">
+                    <span style="color: #0099ff;size: 20px">焦点新闻</span>
+                </div>
+                <div style="height: 170px;">
+                    {% for item in news %}
+                        <li><a href="/app/index/news?nid={{ item.nid }}"><span>{{ item.ntitle }}</span></a></li>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {#    内容右#}
+    <div style="float: right;width: 80%;">
+        <div style="width: 80%;height: 50px;margin: 0 auto;">
+            <div style="float: left;width: 200px;margin-top: 10px;">
+                <img src="/static/images/logo.PNG" style="width: 120px;height: 40px"/>
+            </div>
+            <div style="float: left;width: 400px;margin-top: 10px;">
+                <form action="/app/query/" method="get">
+                    <input style="width: 300px" type="text" class="input input-auto" name="keyword" size="15" id="search"
+                           placeholder="关键词"/>
+                    <input type="text" name="flag" value="book" hidden="hidden"/>
+                    <input type="submit" name="search" value="搜索" class="button"/>
+                </form>
+            </div>
+
+        </div>
+
+        <div style="margin: 0 auto;width: 90%;height: 50px;line-height: 50px;text-align: center">
+            <div style="border-top: 2px solid #3505ff;height: 30px;margin-top: 10px;">
+                <a href="/app/query/?flag=book&keyword=哲学"><span>哲学</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/app/query/?flag=book&keyword=经济学"><span>经济学</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/app/query/?flag=book&keyword=法学"><span>法学</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/app/query/?flag=book&keyword=教育学"><span>教育学</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/app/query/?flag=book&keyword=文学"><span>文学</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/app/query/?flag=book&keyword=历史学"><span>历史学</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/app/query/?flag=book&keyword=理学"><span>理学</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/app/query/?flag=book&keyword=工学"><span>工学</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/app/query/?flag=book&keyword=农学"><span>农学</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/app/query/?flag=book&keyword=医学"><span>医学</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/app/query/?flag=book&keyword=军事学"><span>军事学</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/app/query/?flag=book&keyword=管理学"><span>管理学</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+        </div>
+        <div style="margin: 0 auto;width: 90%;height: auto">
+            <div style="border-top: 2px solid #3505ff;height: 500px;margin-top: 10px;">
+                <table class="table table-striped">
+                    <tr>
+                        <th>封面</th>
+                        <th>图书ID</th>
+                        <th>图书名</th>
+                        <th>价格</th>
+                        <th>库存</th>
+                        <th>种类</th>
+                        <th>点赞</th>
+                        <th>操作</th>
+                    </tr>
+                    {% for book in books %}
+                        <tr>
+                            <td><img src={{ book.bpic }} width="30px" height="30px" alt=""/></td>
+                            <td >{{ book.bid }}</td>
+                            <td>{{ book.bname }}</td>
+                            <td>{{ book.bprice }}</td>
+                            <td>{{ book.bstock }}</td>
+                            <td>{{ book.bfamily }}</td>
+                            <td>
+                                <a href="/app/zan?bid={{ book.bid }}" class="button button-small border-green"><span  class="icon-thumbs-o-up zan"></span></a>/
+                                <a href="/app/cai?bid={{ book.bid }}" class="button button-small border-green"><span class="icon-thumbs-o-down cai"></span></a>
+                            </td>
+                            <td><a href="/app/borrowbook/?bid={{ book.bid }}" onclick="return delConf();" class="button button-small border-green borrowing"><span
+                                    class="icon-mail-forward (alias)"></span>借阅</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div style="text-align: center;margin-top: 25px;">{{ page_str }}</div>
+        </div>
+    </div>
+</div>
+{#  底部#}
+<div style="margin-top: 220px;">{% include 'index_bottom.html' %}</div>
+<script src="/static/js/jquery-1.12.4.js"></script>
+<script>
+    $('.borrowing').click(function () {
+        var bid = $(this).parent().parent().children().html();
+        alert(bid);
+        $.ajax({
+            type: 'post',
+            url: "/app/borrowbook/",
+            data: {},
+            cache: false,
+            dataType: 'json',
+            success: function (data) {
+
+            },
+            error: function () {}
+        });
+    });
+    $('.zan').click(function () {
+        var flag = '+1';
+        addFavor(this, flag);
+    });
+    $('.cai').click(function () {
+        var flag = '-1';
+        addFavor(this, flag);
+    });
+    function addFavor(self, flag) {
+        var fontSize = 15;
+        var top = 0;
+        var right = 0;
+        var opacity = 1;
+
+        var tag = document.createElement('span');
+        $(tag).text(flag);
+        $(tag).css('color', 'green');
+        $(tag).css('position', 'absolute');
+        $(tag).css('fontSize', fontSize+'px');
+        $(tag).css('top', top+'px');
+        $(tag).css('right', right+'px');
+        $(tag).css('opacity', opacity);
+
+        $(self).append(tag);
+
+        //定时器
+        var obj = setInterval(function () {
+            fontSize = fontSize +5;
+            top = top -5;
+            right = right -5;
+            opacity = opacity-0.1;
+
+            $(tag).css('fontSize', fontSize+'px');
+            $(tag).css('top', top+'px');
+            $(tag).css('right', right+'px');
+            $(tag).css('opacity', opacity);
+
+            if(opacity<0){
+                //关闭定时器
+                clearInterval(obj);
+                $(tag).remove();
+            }
+        }, 50);
+    }
+</script>
+</body>
+</html>

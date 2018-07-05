@@ -1,0 +1,66 @@
+{% extends 'manage.html' %}
+{% block title %}管理新闻{% endblock %}
+{% block content %}
+    <div style="float: right;width: 80%;">
+        <div style="width: 80%;height: 50px;margin: 0 auto;">
+            <div style="float: left;width: 200px;margin-top: 10px;">
+                <img src="/static/images/logo.PNG" style="width: 120px;height: 40px"/>
+            </div>
+            <div style="float: right;width: 400px;margin-top: 10px;">
+                <form>
+                    <input style="width: 300px" type="text" class="input input-auto" name="keywords" size="15"
+                           placeholder="关键词"/>
+                    <input type="submit" name="search" value="搜索" class="button"/>
+                </form>
+            </div>
+        </div>
+
+        <div style="margin: 0 auto;width: 90%;height: 50px">
+            <div style="border-top: 2px solid #3505ff;height: 30px;margin-top: 10px;">
+                <span>关键字</span>
+                <div style="float: right;margin-top: 10px;">
+                    <a href="/app/insert-new/" class="button button-small border-green"><span
+                            class="icon-plus-square-o"></span>添加</a>
+                </div>
+            </div>
+        </div>
+        <div style="margin: 0 auto;width: 90%;height: auto">
+            <div style="border-top: 2px solid #3505ff;height: 500px;margin-top: 10px;">
+                <table class="table table-striped">
+                    <tr>
+                        <th width="60px">新闻ID</th>
+                        <th width="200px">创建时间</th>
+                        <th>标题</th>
+                        <th>种类</th>
+                        <th>操作</th>
+                    </tr>
+                    {% for new in news %}
+                        <tr>
+                            <td>{{ new.nid }}</td>
+                            <td>{{ new.ndate_create }}</td>
+                            <td>{{ new.ntitle }}</td>
+                            <td>{{ new.nfamily }}</td>
+                            <td><a onclick="delTip();" href="/app/delete-new/?nid={{ new.nid }}" class="button button-small border-red">
+                                    <span class="icon-trash-o"></span>删除</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        <div style="text-align: center;margin-top: 25px;">{{ page_str }}</div>
+    </div>
+    <script src="/static/js/jquery-1.12.4.js"></script>
+    <script>
+        function delTip() {
+            if(confirm("确定删除?")){
+                alert('s');
+                return true;
+            }else{
+                alert('s');
+                return false;
+            }
+
+        }
+    </script>
+{% endblock %}

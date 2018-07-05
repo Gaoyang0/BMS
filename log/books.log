@@ -1,0 +1,52 @@
+插入一条图书记录:{"bpic": "/static/data/190004.png", "bstock": "15", "bfamily": "\u54f2\u5b66", "bprice": "15.2", "bid": "190004", "bname": "\u6570\u636e\u7ed3\u6784"}
+插入一条图书记录:{"bfamily": "\u54f2\u5b66", "bprice": "15.2", "bpic": "/static/data/190005.png", "bname": "\u6570\u636e\u7ed3\u6784", "bid": "190005", "bstock": "15"}
+插入一条图书记录:{"bname": "\u6570\u636e\u7ed3\u6784", "bfamily": "\u7ecf\u6d4e\u5b66", "bpic": "/static/data/190005.png", "bid": "190005", "bstock": "15", "bprice": "15.2"}
+删除一条ID为:190004图书记录
+插入一条图书记录:{"bid": "190005", "bfamily": "\u7ecf\u6d4e\u5b66", "bname": "\u6570\u636e\u7ed3\u6784", "bpic": "/static/data/190005.png", "bprice": "15.2", "bstock": "15"}
+修改一条图书记录:{"bid": "190005", "bfamily": "\u6559\u80b2\u5b66", "bname": "\u6570\u636e\u7ed3\u6784", "bpic": "/static/data/190005.png", "bprice": "15.2", "bstock": "15"}
+删除一条ID为:190005图书记录
+删除一条ID为:190002图书记录
+删除一条ID为:190001图书记录
+删除一条ID为:190000图书记录
+插入一条图书记录:{"bid": "190000", "bstock": "15", "bpic": "/static/data/190000.png", "bname": "\u6570\u636e\u7ed3\u6784", "bfamily": "\u7ecf\u6d4e\u5b66", "bprice": "15.2"}
+删除一条ID为:190000图书记录
+插入一条图书记录:{"bid": "190000", "bstock": "35", "bprice": "15.2", "bpic": "/static/data/190000.png", "bfamily": "\u7ecf\u6d4e\u5b66", "bname": "\u6570\u636e\u7ed3\u6784"}
+删除一条ID为:190000图书记录
+插入一条图书记录:{"bid": "190000", "bstock": "15", "bprice": "15.2", "bpic": "/static/data/190000.png", "bfamily": "\u7ecf\u6d4e\u5b66", "bname": "\u6570\u636e\u7ed3\u6784"}
+删除一条ID为:190000图书记录
+插入一条图书记录:{"bid": "190004", "bstock": "15", "bprice": "15.2", "bpic": "/static/data/190004.png", "bfamily": "\u6cd5\u5b66", "bname": "\u6570\u636e\u7ed3\u6784"}
+删除一条ID为:190004图书记录
+插入一条图书记录:{"bid": "190004", "bstock": "15", "bprice": "15.2", "bpic": "/static/data/190004.png", "bfamily": "\u7ecf\u6d4e\u5b66", "bname": "\u6570\u636e\u7ed3\u6784"}
+删除一条ID为:190004图书记录
+插入一条图书记录:{"bid": "190000", "bstock": "35", "bprice": "15.2", "bpic": "/static/data/190000.png", "bfamily": "\u7ecf\u6d4e\u5b66", "bname": "\u6570\u636e\u7ed3\u6784"}
+删除一条ID为:190000图书记录
+插入一条图书记录:{"bpic": "/static/data/190004.png", "bprice": "15.2", "bid": "190004", "bstock": "15", "bname": "\u6570\u636e\u7ed3\u6784", "bfamily": "\u54f2\u5b66"}
+删除一条ID为:190004图书记录
+插入一条图书记录:{"bfamily": "\u7ecf\u6d4e\u5b66", "bstock": "15", "bpic": "/static/data/190004.png", "bname": "\u6570\u636e\u7ed3\u6784", "bid": "190004", "bprice": "15.2"}
+删除一条ID为:190004图书记录
+插入一条图书记录:{"bpic": "/static/data/190004.png", "bid": "190004", "bfamily": "\u54f2\u5b66", "bstock": "15", "bprice": "15.2", "bname": "\u6570\u636e\u7ed3\u6784"}
+删除一条ID为:190004图书记录
+插入一条图书记录:{"bname": "\u6570\u636e\u7ed3\u6784", "bstock": "35", "bid": "190000", "bpic": "/static/data/190000.png", "bprice": "15.2", "bfamily": "\u54f2\u5b66"}
+删除一条ID为:190000图书记录
+插入一条图书记录:{"bstock": "15", "bid": "190000", "bpic": "/static/data/190000.png", "bprice": "15.2", "bfamily": "\u6cd5\u5b66", "bname": "\u6570\u636e\u7ed3\u6784"}
+删除一条ID为:190000图书记录
+插入一条图书记录:{"bstock": "15", "bid": "190004", "bprice": "15.2", "bname": "\u6570\u636e\u7ed3\u6784", "bpic": "/static/data/190004.png", "bfamily": "\u7ecf\u6d4e\u5b66"}
+删除一条ID为:190004图书记录
+插入一条图书记录:{"bstock": "15", "bid": "190000", "bprice": "15.2", "bname": "\u6570\u636e\u7ed3\u6784", "bpic": "/static/data/190000.png", "bfamily": "\u54f2\u5b66"}
+插入一条图书记录:{"bstock": "15", "bid": "190001", "bprice": "15.2", "bname": "\u6570\u636e\u7ed3\u6784", "bpic": "/static/data/190001.png", "bfamily": "\u54f2\u5b66"}
+删除一条ID为:190001图书记录
+删除一条ID为:190000图书记录
+插入一条图书记录:{"bstock": "15", "bpic": "/static/data/190004.png", "bfamily": "\u6cd5\u5b66", "bprice": "15.2", "bid": "190004", "bname": "\u6570\u636e\u7ed3\u6784"}
+删除一条ID为:190004图书记录
+插入一条图书记录:{"bstock": "35", "bpic": "/static/data/190000.png", "bfamily": "\u54f2\u5b66", "bprice": "15.2", "bid": "190000", "bname": "\u6570\u636e\u7ed3\u6784"}
+删除一条ID为:190000图书记录
+删除一条ID为:160011图书记录
+删除一条ID为:160010图书记录
+插入一条图书记录:{"bname": "\u6570\u636e\u7ed3\u6784", "bstock": "15", "bid": "190005", "bpic": "/static/data/190005.png", "bprice": "15.2", "bfamily": "\u7ecf\u6d4e\u5b66"}
+修改一条图书记录:{"bname": "\u6570\u636e\u7ed3\u6784", "bstock": "15", "bid": "190005", "bpic": "/static/data/190005.png", "bprice": "16.2", "bfamily": "\u7ecf\u6d4e\u5b66"}
+删除一条ID为:190005图书记录
+插入一条图书记录:{"bprice": "15.2", "bfamily": "\u54f2\u5b66", "bpic": "/static/data/190004.png", "bid": "190004", "bname": "\u6570\u636e\u7ed3\u6784", "bstock": "15"}
+删除一条ID为:190004图书记录
+插入一条图书记录:{"bname": "\u6570\u636e\u7ed3\u6784", "bprice": "15.2", "bid": "190003", "bpic": "/static/data/190003.png", "bfamily": "\u533b\u5b66", "bstock": "15"}
+修改一条图书记录:{"bname": "\u6570\u636e\u7ed3\u6784", "bprice": "15.1", "bid": "190003", "bpic": "/static/data/190003.png", "bfamily": "\u533b\u5b66", "bstock": "15"}
+删除一条ID为:190003图书记录

@@ -1,0 +1,45 @@
+{% extends 'insert.html' %}
+{% block title %}插入新闻{% endblock %}
+{% block content %}
+    <div style="float: right;width: 80%;">
+        <div style="margin-top: 10px;margin-left: 10px;">
+            <form method="post" action="/app/insert-new/" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <div class="label">
+                        <label for="sname">新闻标题</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" id="ntitle" name="ntitle" size="50" placeholder="新闻标题"
+                               data-validate="required:必填"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label for="sname">内容</label>
+                    </div>
+                    <div id="page">
+		                <textarea id="redactor_content" name="ncontent" style="height: 360px;"></textarea>
+	                </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label for="sdept">种类</label>
+                        <div class="field">
+                            <select class="input" name="nfamily">
+                                {% for item in family %}
+                                    <option>{{ item }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-button">
+                    <button class="button" type="submit">提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}

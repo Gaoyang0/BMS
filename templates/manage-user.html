@@ -1,0 +1,66 @@
+{% extends 'manage.html' %}
+{% block title %}管理书籍{% endblock %}
+{% block content %}
+    <div style="float: right;width: 80%;">
+        <div style="width: 80%;height: 50px;margin: 0 auto;">
+            <div style="float: left;width: 200px;margin-top: 10px;">
+                <img src="/static/images/logo.PNG" style="width: 120px;height: 40px"/>
+            </div>
+            <div style="float: right;width: 400px;margin-top: 10px;">
+                <form>
+                    <input style="width: 300px" type="text" class="input input-auto" name="keywords" size="15"
+                           placeholder="关键词"/>
+                    <input type="submit" name="search" value="搜索" class="button"/>
+                </form>
+            </div>
+        </div>
+
+        <div style="margin: 0 auto;width: 90%;height: 50px">
+            <div style="border-top: 2px solid #3505ff;height: 30px;margin-top: 10px;">
+                <span>关键字</span>
+                <div style="float: right;margin-top: 10px;">
+                    <a href="/app/insert-user/" class="button button-small border-green"><span
+                            class="icon-plus-square-o"></span>添加</a>
+                </div>
+            </div>
+        </div>
+        <div style="margin: 0 auto;width: 90%;height: auto">
+            <div style="border-top: 2px solid #3505ff;height: 500px;margin-top: 10px;">
+                <table class="table table-striped">
+                    <tr>
+                        <th>头像</th>
+                        <th>用户ID</th>
+                        <th>用户名</th>
+                        <th>密码</th>
+                        <th>电话</th>
+                        <th>角色</th>
+                        <th>操作</th>
+                    </tr>
+                    {% for user in users %}
+                        <tr>
+                            <td><img src={{ user.upic }} width="30px" height="30px" alt=""/></td>
+                            <td>{{ user.uid }}</td>
+                            <td>{{ user.uname }}</td>
+                            <td>{{ user.upwd }}</td>
+                            <td>{{ user.utel }}</td>
+                            <td>{{ user.urole }}</td>
+                            <td><a onclick="delTip();" href="/app/delete-user/?uid={{ user.uid }}" class="button button-small border-red">
+                                    <span class="icon-trash-o"></span>删除</a>
+                                <a href="/app/modify-user/?uid={{ user.uid }}" class="button button-small border-blue">
+                                    <span class="icon-edit"></span>修改</a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        <div style="text-align: center;margin-top: 25px;">{{ page_str }}</div>
+    </div>
+    <script src="/static/js/jquery-1.12.4.js"></script>
+    <script>
+        function delTip(event) {
+            if(confirm("确定删除?")){
+                event.preventDefault();
+            }
+        }
+    </script>
+{% endblock %}
